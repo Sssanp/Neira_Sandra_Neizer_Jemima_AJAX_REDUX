@@ -19,13 +19,24 @@
             <h2>Character Guide</h2>
             <p>Search for your favorite Star Wars character and find out more about them!</p>
             <!-- button  to display character menu-->
-            <button id="btn" class="btn" onclick="showMenu()">Search!</button>
+            <button id="btn-start" class="btn" onclick="showMenu()">Search!</button>
             <br>
             <img class="miniicon" src="images/miniicon.png" alt="icon">
         </div>
-    </div>  
 
-    
+
+        <!-- character menu when cliking on search! -->
+        <div id="menu" class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10 xl-col-start-4 xl-col-end-10 menu-box box-center">
+            <h1>Character Menu</h1>
+            <p>Search for your favorite Star Wars character and find out more about them!</p>
+            <form action="index.php" method="POST">
+                <input type="text" name="search" id="search" placeholder="Search for a character">
+                <button type="submit" name="submit" id="submit" class="btn">Search!</button>
+            </form>
+            <br>
+            <img class="miniicon" src="images/miniicon.png" alt="icon">
+    </div>  
+    </div>
 
     
 </body>
