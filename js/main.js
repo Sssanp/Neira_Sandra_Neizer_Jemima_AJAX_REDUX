@@ -69,38 +69,28 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     //Variables
-    const characterInfo = document.querySelector('.character-info');
-    // movieInfo = document.querySelector('.movie-info');
-    // template = document.querySelector('#movie-template').content;
-    // baseURL = `https://swapi.dev/api/`
-
+    const characterInfo = document.querySelector('#characters');
+    movies = document.querySelector('#movies');
+    template = document.querySelector('#movie-template');
     let button = document.querySelector('#btn-start');
     let characterMenu = document.querySelector('#menu');
     let menubox = document.querySelector('.intro-box');
+    baseURL = `https://swapi.dev/api/`;
 
 
     //Functions
 
 
     //1st AJAX call
-    // function getCharacters() {
-    //     fetch(`${baseURL}people`)
-    //         .then(response => response.json())
+     function getCharacters() {
+         fetch(`${baseURL}people`)
+             .then(response => response.json())
+             .then()
+             .catch()
 
-    // }
+
+     }
 
     //hide firstmenubox until start is clicked
     function hideMenu() {
@@ -125,15 +115,8 @@
 
 
     //Event Listeners
-    // start.addEventListener('click', getCharacters);
-    // menu.addEventListener('click', loadCharacterMenu);
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
-
-
-
-
-
 
 
 })();
