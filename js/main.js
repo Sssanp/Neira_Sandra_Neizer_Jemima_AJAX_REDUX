@@ -31,58 +31,51 @@
 
     //Variables
     const characterInfo = document.querySelector('.character-info');
-    movieInfo = document.querySelector('.movie-info');
-    template = document.querySelector('#movie-template').content;
-    baseURL = `https://swapi.dev/api/`
-    start = document.querySelector('#btn-start');
-    menu = document.querySelector('#menu');
-    menubox = document.querySelector('.menu-box');
+    // movieInfo = document.querySelector('.movie-info');
+    // template = document.querySelector('#movie-template').content;
+    // baseURL = `https://swapi.dev/api/`
+    
+    let button = document.querySelector('#btn-start');
+    let characterMenu = document.querySelector('#menu');
+    let menubox = document.querySelector('.intro-box');
 
 
     //Functions
 
 
     //1st AJAX call
-    function getCharacters() {
-        fetch(`${baseURL}people`)
-            .then(response => response.json())
+    // function getCharacters() {
+    //     fetch(`${baseURL}people`)
+    //         .then(response => response.json())
 
-    }
+    // }
 
-    //hide menubox until start is clicked
-
+    //hide firstmenubox until start is clicked
     function hideMenu() {
         console.log('hide menu');
         menubox.style.display = "none";
     }
 
     // Show menubox when start is clicked
-
     function showMenu() {
         console.log('show menu');
-        menubox.style.display = "block";
+        characterMenu.style.display = "block";
     }
-
-
 
 
 
     //onclick load character menu
 
-    function loadCharacterMenu() {
-        console.log('load character menu');
-    }
+    // function loadCharacterMenu() {
+    //     console.log('load character menu');
+    // }
 
 
 
     //Event Listeners
-
-    start.addEventListener('click', getCharacters);
-    menu.addEventListener('click', loadCharacterMenu);
-    start.addEventListener('click', hideMenu);
-    start.addEventListener('click', showMenu);
-
-
-
-
+    // start.addEventListener('click', getCharacters);
+    // menu.addEventListener('click', loadCharacterMenu);
+    button.addEventListener('click', hideMenu);
+    button.addEventListener('click', showMenu);
+    
 })();
