@@ -28,79 +28,54 @@
     //- output opening crawl
     //- Grab the episode → use that to match an image
 
-    //Space Ship Animation
-
-    gsap.registerPlugin(ScrollTrigger);
-
-
-    const space_ship = document.querySelectorAll(".space_ship");
-
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.animation_container',
-            pin: true,
-            markers: false,
-            end: '100% 100%',
-            scrub: true,
-        },
-    });
-
-
-    //TIMELINE
-
-
-    tl.to(space_ship, { scale: 0.5, y: '30vh', duration: 4 })
-    tl.to(space_ship, { rotate: 360, duration: 3.5 });
-
-    //when timeline is complete, hide the animation container
-    tl.eventCallback("onComplete", function () {
-        document.querySelector('.animation_container').style.display = "none";
-    });
-
-    //intro-box pop up when timeline is complete
-
-    tl.eventCallback("onComplete", function () {
-        document.querySelector('.intro-box').style.display = "block";
-    }
-
-    );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     //Variables
-    const characterInfo = document.querySelector('.character-info');
-    // movieInfo = document.querySelector('.movie-info');
-    // template = document.querySelector('#movie-template').content;
-    // baseURL = `https://swapi.dev/api/`
-
+    const characterInfo = document.querySelector('#characters');
+          movies = document.querySelector('#movies');
+          template = document.querySelector('#movie-template');
     let button = document.querySelector('#btn-start');
     let characterMenu = document.querySelector('#menu');
     let menubox = document.querySelector('.intro-box');
 
+    // movieInfo = document.querySelector('.movie-info');
+    
+         baseURL = `https://swapi.dev/api/`
+    
+    
 
     //Functions
 
 
     //1st AJAX call
-    // function getCharacters() {
-    //     fetch(`${baseURL}people`)
+    //  function getCharacters() {
+    //    fetch(`${baseURL}people`)
     //         .then(response => response.json())
+    //         .then(function (response) {
+    //             const people = response.movieslist;
+    //             const ul = document.createElement("ul");
+    //         })
 
-    // }
+    //         people.forEach(people => {
+    //             const li = document.createElement("li");
+    //             const a = document.createElement("a");
+    //             a.textContent = people['#TITLE'];
+    //                 a.dataset.review = people['#IMDB_ID'];
+    //                 li.appendChild(a);
+    //                 ul.appendChild(li);
+    //         });
+    //         characterInfo.appendChild(ul);
+    //         .then(function () {
+    //             const links = document.querySelectorAll("#movie-box li a");
+    //             links.forEach(link => {
+    //                 link.addEventListener("click", getReview);
+    //             });
+    //         })
+    //         .catch(function (err) {
+    //             console.log(err);
+    //             //send message to user in DOM, there was an error
+    //         });
+    //  }
 
     //hide firstmenubox until start is clicked
     function hideMenu() {
@@ -129,11 +104,5 @@
     // menu.addEventListener('click', loadCharacterMenu);
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
-
-
-
-
-
-
 
 })();
