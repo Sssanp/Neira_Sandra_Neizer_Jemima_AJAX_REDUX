@@ -28,7 +28,7 @@
     //- output opening crawl
     //- Grab the episode → use that to match an image
 
-    //ANIMACIONES CON SCROLL
+    //Space Ship Animation
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -52,6 +52,24 @@
 
     tl.to(space_ship, { scale: 0.5, y: '30vh', duration: 4 })
     tl.to(space_ship, { rotate: 360, duration: 3.5 });
+
+    //when timeline is complete, hide the animation container
+    tl.eventCallback("onComplete", function () {
+        document.querySelector('.animation_container').style.display = "none";
+    });
+
+    //intro-box pop up when timeline is complete
+
+    tl.eventCallback("onComplete", function () {
+        document.querySelector('.intro-box').style.display = "block";
+    }
+
+    );
+
+
+
+
+
 
 
 
@@ -111,6 +129,9 @@
     // menu.addEventListener('click', loadCharacterMenu);
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
+
+
+
 
 
 
