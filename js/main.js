@@ -47,34 +47,34 @@
 
 
     //1st AJAX call
-     function getCharacters() {
-       fetch(`${baseURL}people`)
-            .then(response => response.json())
-            .then(function (response) {
-                const people = response.movieslist;
-                const ul = document.createElement("ul");
-            })
+    //  function getCharacters() {
+    //    fetch(`${baseURL}people`)
+    //         .then(response => response.json())
+    //         .then(function (response) {
+    //             const people = response.movieslist;
+    //             const ul = document.createElement("ul");
+    //         })
 
-            people.forEach(people => {
-                const li = document.createElement("li");
-                const a = document.createElement("a");
-                a.textContent = people['#TITLE'];
-                    a.dataset.review = people['#IMDB_ID'];
-                    li.appendChild(a);
-                    ul.appendChild(li);
-            });
-            characterInfo.appendChild(ul);
-            .then(function () {
-                const links = document.querySelectorAll("#movie-box li a");
-                links.forEach(link => {
-                    link.addEventListener("click", getReview);
-                });
-            })
-            .catch(function (err) {
-                console.log(err);
-                //send message to user in DOM, there was an error
-            });
-     }
+    //         people.forEach(people => {
+    //             const li = document.createElement("li");
+    //             const a = document.createElement("a");
+    //             a.textContent = people['#TITLE'];
+    //                 a.dataset.review = people['#IMDB_ID'];
+    //                 li.appendChild(a);
+    //                 ul.appendChild(li);
+    //         });
+    //         characterInfo.appendChild(ul);
+    //         .then(function () {
+    //             const links = document.querySelectorAll("#movie-box li a");
+    //             links.forEach(link => {
+    //                 link.addEventListener("click", getReview);
+    //             });
+    //         })
+    //         .catch(function (err) {
+    //             console.log(err);
+    //             //send message to user in DOM, there was an error
+    //         });
+    //  }
 
     //hide firstmenubox until start is clicked
     function hideMenu() {
