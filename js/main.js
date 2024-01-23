@@ -28,13 +28,47 @@
     //- output opening crawl
     //- Grab the episode → use that to match an image
 
+    //ANIMACIONES CON SCROLL
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    const space_ship = document.querySelectorAll(".space_ship");
+
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.animation_container',
+            pin: true,
+            markers: false,
+            end: '100% 100%',
+            scrub: true,
+        },
+    });
+
+
+    //TIMELINE
+
+
+    tl.to(space_ship, { scale: 0.5, y: '30vh', duration: 4 })
+    tl.to(space_ship, { rotate: 360, duration: 3.5 });
+
+
+
+
+
+
+
+
+
+
 
     //Variables
     const characterInfo = document.querySelector('.character-info');
     // movieInfo = document.querySelector('.movie-info');
     // template = document.querySelector('#movie-template').content;
     // baseURL = `https://swapi.dev/api/`
-    
+
     let button = document.querySelector('#btn-start');
     let characterMenu = document.querySelector('#menu');
     let menubox = document.querySelector('.intro-box');
@@ -77,5 +111,8 @@
     // menu.addEventListener('click', loadCharacterMenu);
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
-    
+
+
+
+
 })();
