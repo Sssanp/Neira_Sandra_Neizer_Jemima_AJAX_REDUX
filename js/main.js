@@ -29,6 +29,7 @@
     //- Grab the episode → use that to match an image
 
 
+
     //Variables
     const characterInfo = document.querySelector('#characters');
           movies = document.querySelector('#movies');
@@ -103,5 +104,5 @@
     // menu.addEventListener('click', loadCharacterMenu);
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
-    
+
 })();
