@@ -71,8 +71,8 @@
 
     //Variables
     const characterInfo = document.querySelector('#characters');
-    movies = document.querySelector('#movies');
-    template = document.querySelector('#movie-template');
+    const movies = document.querySelector('#movies');
+    const template = document.querySelector('#movie-template');
     let button = document.querySelector('#btn-start');
     let characterMenu = document.querySelector('#menu');
     let menubox = document.querySelector('.intro-box');
@@ -83,14 +83,59 @@
 
 
     //1st AJAX call
-     function getCharacters() {
-         fetch(`${baseURL}people`)
+     function getPeople() {
+         fetch(`${baseURL}/people`)
+
              .then(response => response.json())
-             .then()
-             .catch()
 
+             .then(function (response) {
+                console.log(response.results);
+             const people = response.list;
+             const ul = document.createElement('ul');
+             
+             people.forEach(character => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                console.log(character['#characters']);
+                a.textContent = character['#characters'];
+                a.dataset.movie = character['#SWAPI_ID'];
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+            characterInfo.appendChild(ul);
+        })
+        .then(function () {
+            const links = document.querySelectorAll("#characterInfo li a");
+            links.forEach(link => {
+            link.addEventListener("click", getMovie);
+            });
+        })
 
-     }
+        .catch(error => {
+            console.log(error);
+        });
+     };
+
+        function getMovie(e) {
+            console.log(e.currentTarget.dataset.movie);
+            const movieID = e.currentTarget.dataset.movie;
+
+            fetch(`${baseURL}?tt=${movieID}`)
+            .then(response => response.json())
+            .then(function (response) {
+                filmCon.innerHTML = "";
+                const template = document.importNode(filmemplate.content, true);
+                    const filmBody = template.querySelector(".film-description");
+                    filmBody.innerHTML = response.short.film.filmBody;
+                    filmCon.appendChild(template);
+            })
+
+            .catch(error => {
+                console.log(error);
+                // add message to user that is written in the DOM
+            });
+        
+    }
 
     //hide firstmenubox until start is clicked
     function hideMenu() {
@@ -105,18 +150,10 @@
     }
 
 
-
-    //onclick load character menu
-
-    // function loadCharacterMenu() {
-    //     console.log('load character menu');
-    // }
-
-
-
     //Event Listeners
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
-
+    
+    getPeople();
 
 })();
