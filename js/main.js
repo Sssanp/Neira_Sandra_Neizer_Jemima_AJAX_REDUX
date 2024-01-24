@@ -71,41 +71,59 @@
 
     //Variables
     const characterInfo = document.querySelector('#characters');
-    const movies = document.querySelector('#movies');
-    const template = document.querySelector('#movie-template');
+    const filmCon = document.querySelector('#film-con');
+    const filmTemplate = document.querySelector('#film-template');
+
     let button = document.querySelector('#btn-start');
     let characterMenu = document.querySelector('#menu');
     let menubox = document.querySelector('.intro-box');
-    baseURL = `https://swapi.dev/api/`;
-
+    const baseURL = `https://swapi.dev/api/`;
+    
 
     //Functions
 
 
     //1st AJAX call
      function getPeople() {
-         fetch(`${baseURL}/people`)
+
+         fetch(`${baseURL}people`)
 
              .then(response => response.json())
 
              .then(function (response) {
-                console.log(response.results);
-             const people = response.list;
+             const people = response.results;
              const ul = document.createElement('ul');
              
              people.forEach(character => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                console.log(character['#characters']);
-                a.textContent = character['#characters'];
-                a.dataset.movie = character['#SWAPI_ID'];
+                const film = (character['films'])
+
+                console.log(character['name']);
+                console.log(character['films']);
+
+                
+                // console.log(film.length)
+                
+                a.textContent = character['name'];
+
+               if (film && film.length < 2) {a.dataset.film = film[0]
+                
+               } else {
+                a.dataset.film = film[1]
+               } 
+            //    a.dataset.film = film[1];
+                // a.dataset.movie = character['#SWAPI_ID'];
+
                 li.appendChild(a);
                 ul.appendChild(li);
             });
+
             characterInfo.appendChild(ul);
         })
+
         .then(function () {
-            const links = document.querySelectorAll("#characterInfo li a");
+            const links = document.querySelectorAll("#characters li a");
             links.forEach(link => {
             link.addEventListener("click", getMovie);
             });
@@ -117,20 +135,22 @@
      };
 
         function getMovie(e) {
-            console.log(e.currentTarget.dataset.movie);
-            const movieID = e.currentTarget.dataset.movie;
-
-            fetch(`${baseURL}?tt=${movieID}`)
+            
+            const filmID = e.currentTarget.dataset.film;
+            
+            // fetch(`${baseURL}?tt=${filmID}`)
+            fetch(`${filmID}`)
             .then(response => response.json())
             .then(function (response) {
                 filmCon.innerHTML = "";
-                const template = document.importNode(filmemplate.content, true);
-                    const filmBody = template.querySelector(".film-description");
-                    filmBody.innerHTML = response.short.film.filmBody;
+                // const filmBody = ;
+                const template = document.importNode(filmTemplate.content, true);
+                const filmBody = template.querySelector(".film-description");
+                    filmBody.innerHTML = response.opening_crawl;
                     filmCon.appendChild(template);
             })
 
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
                 // add message to user that is written in the DOM
             });
