@@ -1,40 +1,10 @@
 (() => {
 
-    //SWAPI .dev
-
-    //- How to get to the character depending on the name
-    //- Each movie will have its id
-    //- First ajax call
-    //- make a second API call with the films
-
-    //Plan
-
-    //- var for character box
-    //- var for the movie info box
-    //- var base URL
-    //- var template tag
-    //- 2 functions
-    //- 1st AJAX call
-    //- Fetch
-    //- Create a list
-    //- Populate List
-    //- Attach event listeners “click”
-    //- Dat attribute = film id
-
-    //2nd Ajax call
-
-    //- Capture  that film id
-    //- second AJAX call with that film id
-    //- output opening crawl
-    //- Grab the episode → use that to match an image
-
     //Space Ship Animation
 
     gsap.registerPlugin(ScrollTrigger);
 
-
     const space_ship = document.querySelectorAll(".space_ship");
-
 
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -67,8 +37,6 @@
     );
 
 
-
-
     //Variables
     const characterInfo = document.querySelector('#characters');
     const filmCon = document.querySelector('#film-con');
@@ -82,7 +50,6 @@
 
     //Functions
 
-
     //1st AJAX call
     function getPeople() {
 
@@ -95,39 +62,29 @@
                 const ul = document.createElement('ul');
 
                 people.forEach(character => {
-                    const li = document.createElement('li');
-                    const a = document.createElement('a');
-                    const film = (character['films'])
+                    const select = document.querySelector('#search');
+                    const option = document.createElement('option');
+                    option.value = character['name'];
+                    option.innerHTML = character['name'];
+                    select.appendChild(option);
 
-                    console.log(character['name']);
-                    console.log(character['films']);
 
+                    const film = (character['films']);
 
-                    // console.log(film.length)
-
-                    a.textContent = character['name'];
 
                     if (film && film.length < 2) {
-                        a.dataset.film = film[0]
+                        option.dataset.film = film[0]
 
                     } else {
-                        a.dataset.film = film[1]
+                        option.dataset.film = film[1];
                     }
-                    //    a.dataset.film = film[1];
-                    // a.dataset.movie = character['#SWAPI_ID'];
-
-                    li.appendChild(a);
-                    ul.appendChild(li);
                 });
-
-                characterInfo.appendChild(ul);
             })
 
             .then(function () {
-                const links = document.querySelectorAll("#characters li a");
-                links.forEach(link => {
-                    link.addEventListener("click", getMovie);
-                });
+                let searchbutton = document.querySelector('#submit');
+                searchbutton.addEventListener('click', getMovie);
+
             })
 
             .catch(error => {
@@ -137,19 +94,45 @@
 
     function getMovie(e) {
 
-        const filmID = e.currentTarget.dataset.film;
+        const searchValue = document.querySelector('#search option:checked');
+        const filmID = searchValue.dataset.film;
+        console.log("hey: " + filmID);
 
-        // fetch(`${baseURL}?tt=${filmID}`)
+
+
+        const img = document.createElement('img');
+        img.src = `images/${searchValue.value}.jpeg`;
+
+
+
+
+        const ul = document.createElement('ul');
+
+        const li = document.createElement('li');
+
+        li.appendChild(img);
+        ul.appendChild(li);
+
+
+        characterInfo.appendChild(ul);
+
+
+
+
+
+
+
+
         fetch(`${filmID}`)
             .then(response => response.json())
             .then(function (response) {
                 filmCon.innerHTML = "";
-                // const filmBody = ;
                 const template = document.importNode(filmTemplate.content, true);
                 const filmBody = template.querySelector(".film-description");
                 filmBody.innerHTML = response.opening_crawl;
                 const filmTitle = template.querySelector(".filmTitle");
                 filmTitle.innerHTML = response.title;
+
                 const filmImage = template.querySelector(".filmImage");
                 filmImage.src = `images/${response.title}.jpeg`;
                 filmCon.appendChild(template);
@@ -158,7 +141,6 @@
 
             .catch((error) => {
                 console.log(error);
-                // add message to user that is written in the DOM
             });
 
     }
@@ -176,10 +158,11 @@
     }
 
 
-    //Event Listeners
     button.addEventListener('click', hideMenu);
     button.addEventListener('click', showMenu);
 
     getPeople();
+
+
 
 })();
