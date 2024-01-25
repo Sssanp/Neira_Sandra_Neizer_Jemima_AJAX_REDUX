@@ -85,4 +85,14 @@ h1 {
   width: 350px;
   height: 350px;
   transform: rotate(180deg);
+}
+
+img {
+  width: 50px;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
 }/*# sourceMappingURL=main.css.map */
