@@ -98,16 +98,14 @@
         const filmID = searchValue.dataset.film;
         console.log("hey: " + filmID);
 
-
-
+        const existingImage = document.querySelector('#characters li');
         const img = document.createElement('img');
         img.src = `images/${searchValue.value}.jpeg`;
-
-
-
-
+        
+        if (existingImage) {
+            existingImage.parentNode.removeChild(existingImage);
+        }
         const ul = document.createElement('ul');
-
         const li = document.createElement('li');
 
         li.appendChild(img);
@@ -117,12 +115,7 @@
         characterInfo.appendChild(ul);
 
 
-
-
-
-
-
-
+        
         fetch(`${filmID}`)
             .then(response => response.json())
             .then(function (response) {
