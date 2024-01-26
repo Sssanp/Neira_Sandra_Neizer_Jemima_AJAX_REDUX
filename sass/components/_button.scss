@@ -2,22 +2,23 @@
 
 
 .btn {
-    background-color: black;
+    background-color: #ffff;
     border: 1px solid black;
     border-radius: 0;
-    color: white;
+    color: #000;
     font-family: 'starjediregular', sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: .3rem;
+    line-height: .9;
     padding: 1rem 2rem;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background-color: white;
-        color: black;
+        background-color: #a6cde8;
+        color: #ffff;
+        cursor: pointer;
     }
 }
 
