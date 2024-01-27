@@ -64,9 +64,22 @@ ul li {
     display: inline-block;
     // margin: 0 10px;
 }
-.content, #characters ul { background-color: #fff;}
+.content, #characters ul { 
+    background-color: #fff;
+}
+   
+    #films { grid-row: 1/2}
+    #film-con {
+        grid-row: 1/2;
+        margin-top: 4.5rem;
+    }
 
-#film-con div{ 
-    text-align: left;
-    color: #000;
+
+#characters ul li a { 
+    grid-row: 1/7;
+}
+#film-con { 
+    text-align: justify;
+    background-color: #fff;
+    color: #171717;
 }
