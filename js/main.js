@@ -85,8 +85,8 @@
                     const film = (character['films']);
 
 
-                    if (film.length > 2) {
-                        option.dataset.film = film[2]
+                    if (film.length > 4) {
+                        option.dataset.film = film[3]
 
                     } else {
                         option.dataset.film = film[0];
