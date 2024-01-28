@@ -16,7 +16,7 @@
     <h1 class="hidden">Home Page</h1>
 
     <section>
-        <h1>scroll</h1>
+        <h1 class="box-center">Scroll to discover</h1>
     <div class="animation_container">
         <img
           class="space_ship"
@@ -26,16 +26,10 @@
     </div>
       </section>
 
-      <div class="grid-con intro-text">
-        <div class="col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10 xl-col-start-4 xl-col-end-10 box-center intro-container">
-            <h3 class="intro-text">Star <br> wars</h3>
-        </div>
-    </div>
-
 
     <section class="grid-con">
         <div class="intro-box col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10 xl-col-start-4 xl-col-end-10 box-center">
-            <h1>Star wars</h1>
+            <h1 class="intro-text">Star <br> wars</h1>
             <h2>Character Guide</h2>
             <p>Search for your favorite Star Wars character and find out more about them!</p>
             <!-- button  to display character menu-->
@@ -49,7 +43,7 @@
         <div id="menu" class="col-start-2 col-end-4 m-col-start-3 m-col-end-11 l-col-start-3 l-col-end-11 xl-col-start-3 xl-col-end-11 menu-box box-center">
             <h2>Character Menu</h2>
             <p>Search for your favorite Star Wars character and find out more about them!</p>
-                <select type="text" name="search" id="search">
+                <select class="col-span-2" type="text" name="search" id="search">
                     <option value="select character">
                         Select Character
                     </option>
@@ -60,19 +54,22 @@
             <img class="miniicon" src="images/miniicon.png" alt="icon">
             
             <section class="grid-con">
-                <section class="m-col-start-5 m-col-end-7" id="characters">
+                <section class="m-col-start-2 m-col-end-6 box-center" id="characters">
                     <h2 class="hidden">Characters</h2>
                 </section>
         
                 <!-- <section class="m-col-start-9 m-col-end-11 l-col-start-9 l-col-end-11 xl-col-start-9 xl-col-end-11" id="films">
                     <h2>Movies</h2>
                 </section> -->
-                <section class="m-col-start-7 m-col-end-12 l-col-span-full xl-col-start-7 xl-col-end-12" id="film-con">
+                <section class="col-start-2 col-end-4  m-col-end-12 l-col-span-full xl-col-start-7 xl-col-end-12" id="film-con">
                 </section>
+                
+
         
                 <template id="film-template">
                     <div>
-                    <img class="filmImage ">
+                        
+                    <img class="filmImage box-center ">
                     <h3 class="filmTitle"></h3>
                     <h4 class="film-episode"></h4>
                     <p class="film-description"></p>
@@ -81,9 +78,7 @@
             </section>
         </div>  
     </section>
-
-    
-    
+ 
 </body>
 
 </html>

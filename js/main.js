@@ -20,21 +20,20 @@
     //TIMELINE
 
 
-    tl.to(space_ship, { scale: 0.5, y: '30vh', duration: 2 })
+    tl.to(space_ship, { scale: 0.5, y: '2vh', duration: 5 })
     tl.to(space_ship, { rotate: 360, duration: 3.5 });
 
-    //when timeline is complete, hide the animation container
-    tl.eventCallback("onComplete", function () {
-        document.querySelector('.animation_container').style.display = "none";
-    });
+    //no more pop up
+    //tl.eventCallback("onComplete", function () {
+    // document.querySelector('.animation_container').style.display = "none";
+    //});
 
-    //intro-box pop up when timeline is complete
 
-    tl.eventCallback("onComplete", function () {
-        document.querySelector('.intro-box').style.display = "block";
-    }
+    //tl.eventCallback("onComplete", function () {
+    //  document.querySelector('.intro-box').style.display = "block";
+    //}
 
-    );
+    //);
 
 
     //Variables

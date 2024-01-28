@@ -1,5 +1,5 @@
 # Neira_Sandra_Neizer_Jemima_AJAX_REDUX
- Hi, this is our Star Wars API 
+ Hi, this is our Star Wars API.
 ## Installation
 No installation is required. Download the files to your desktop.
 ## Usage
@@ -11,7 +11,7 @@ Open index.html in your browser choice.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 ## History
->Usidng the Star wars API to create a list that display characters 
+>Using the Star wars API we create a menu that display characters and movies 
 ## Credits
 Sandra Paola Neira (San) Jemima Neizer (Jay)
 ## License
