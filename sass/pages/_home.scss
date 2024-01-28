@@ -40,7 +40,7 @@
 
 .animation_container {
     position: relative;
-    height: 785vh;
+    height: 150vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,46 +69,53 @@ ul li {
 // .content { 
 //     background-color: #fff;
 // }
-   
-    #films { grid-row: 1/2}
-    #film-con {
-        grid-row: 1/2;
-        margin-top: 4.5rem;
-    }
+
+#films {
+    grid-row: 1/2
+}
+
+#film-con {
+    grid-row: 1/2;
+    margin-top: 4.5rem;
+}
 
 
-#characters { 
+#characters {
     position: absolute;
 }
 
-#characters ul li { 
+#characters ul li {
     margin-left: 18rem;
 }
 
-#film-con { 
+#film-con {
     text-align: left;
     background-color: #fff;
     color: #171717;
 }
 
-.film-episode, .filmTitle, .film-description {
-  margin-left: 26rem;
-  position: absolute;
+.film-episode,
+.filmTitle,
+.film-description {
+    margin-left: 26rem;
+    position: absolute;
 }
 
-#film-con{ 
+#film-con {
     img {
-    width: 50%;
-}
+        width: 50%;
+    }
 
-.filmTitle{
-    margin-top: -33rem;
-}
-.film-episode{
-    margin-top: -35rem;
-}
-.film-description{
-    margin-top: -30rem;
-    margin-right: 20rem;
-}
+    .filmTitle {
+        margin-top: -33rem;
+    }
+
+    .film-episode {
+        margin-top: -35rem;
+    }
+
+    .film-description {
+        margin-top: -30rem;
+        margin-right: 20rem;
+    }
 }
