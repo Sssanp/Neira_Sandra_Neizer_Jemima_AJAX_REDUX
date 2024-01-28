@@ -5,12 +5,54 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "starjedihollowregular";
+  src: url("../fonts/starjhol-webfont.woff2") format("woff2"), url("../fonts/starjhol-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "tradegothicroman";
+  src: url("../fonts/tradegothic_roman-webfont.woff2") format("woff2"), url("../fonts/tradegothic_roman-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 h1 {
   font-family: "starjediregular", sans-serif;
   font-size: 40px;
   margin-bottom: 20px;
   margin-top: 20px;
   line-height: 44px;
+}
+
+.intro-text {
+  font-family: "starjedihollowregular";
+  color: #FFE81F;
+  font-size: 40px;
+}
+
+p {
+  font-family: "tradegothicroman";
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 24px;
+}
+
+h3 {
+  font-family: "starjediregular", sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 34px;
+}
+
+h2 {
+  font-family: "tradegothicroman";
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 34px;
 }
 
 .btn {
@@ -39,9 +81,10 @@ h1 {
 
 #search {
   height: 3rem;
-  width: 24rem;
+  width: 14rem;
   font-size: 1.4rem;
   border-radius: 0;
+  z-index: 10;
 }
 
 #home-page-bg {
@@ -50,7 +93,7 @@ h1 {
   background-image: url(../images/homebg.jpg);
   background-repeat: repeat;
   background-position: top center;
-  background-size: 140%;
+  background-size: 200%;
 }
 
 @media screen and (max-width: 1199px) {
@@ -65,11 +108,12 @@ h1 {
 }
 .intro-box,
 .menu-box {
-  padding-top: 100px;
+  padding-top: 10px;
   padding-bottom: 100px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 100px;
+  margin-top: -520px;
+  z-index: 10;
 }
 
 .miniicon {
@@ -80,7 +124,7 @@ h1 {
 
 .animation_container {
   position: relative;
-  height: 150vh;
+  height: 115vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +175,7 @@ ul li {
 .film-episode,
 .filmTitle,
 .film-description {
-  margin-left: 26rem;
+  margin-left: 30rem;
   position: absolute;
 }
 
