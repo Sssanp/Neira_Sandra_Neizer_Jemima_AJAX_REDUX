@@ -72,6 +72,8 @@
             .then(function (response) {
                 const people = response.results;
                 const ul = document.createElement('ul');
+                //people.innerHTML = spinner;
+                //for add spinner
 
                 people.forEach(character => {
                     const select = document.querySelector('#search');

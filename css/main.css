@@ -116,6 +116,10 @@ h2 {
   z-index: 10;
 }
 
+#characters {
+  margin-bottom: -160px;
+}
+
 .miniicon {
   width: 50px;
   height: 50px;
@@ -140,8 +144,12 @@ h2 {
 }
 
 #characters ul li img {
-  width: 8rem;
+  width: 100px;
   border-radius: 50%;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 ul li {
@@ -158,37 +166,12 @@ ul li {
   margin-top: 4.5rem;
 }
 
-#characters {
-  position: absolute;
-}
-
-#characters ul li {
-  margin-left: 18rem;
+#film-con img {
+  width: 100%;
 }
 
 #film-con {
   text-align: left;
   background-color: #fff;
   color: #171717;
-}
-
-.film-episode,
-.filmTitle,
-.film-description {
-  margin-left: 30rem;
-  position: absolute;
-}
-
-#film-con img {
-  width: 50%;
-}
-#film-con .filmTitle {
-  margin-top: -33rem;
-}
-#film-con .film-episode {
-  margin-top: -35rem;
-}
-#film-con .film-description {
-  margin-top: -30rem;
-  margin-right: 20rem;
 }/*# sourceMappingURL=main.css.map */

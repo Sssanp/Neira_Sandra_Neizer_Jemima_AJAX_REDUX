@@ -34,6 +34,7 @@ html {
 
 .box-center {
    text-align: center;
+   align-items: center;
    padding: 20px;
    margin-top: 10px;
    margin-bottom: 10px;
