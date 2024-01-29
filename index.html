@@ -28,7 +28,7 @@
 
 
     <section class="grid-con">
-        <div class="intro-box col-start-2 col-end-4 m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10 xl-col-start-4 xl-col-end-10 box-center">
+        <div class="intro-box col-start-1 col-end-5 m-col-start-4 m-col-end-10 l-col-start-4 l-col-end-10 xl-col-start-4 xl-col-end-10 box-center">
             <h1 class="intro-text">Star <br> wars</h1>
             <h2>Character Guide</h2>
             <p>Search for your favorite Star Wars character and find out more about them!</p>
@@ -40,7 +40,7 @@
 
 
         <!-- character menu when cliking on search! -->
-        <div id="menu" class="col-start-2 col-end-4 m-col-start-3 m-col-end-11 l-col-start-3 l-col-end-11 xl-col-start-3 xl-col-end-11 menu-box box-center">
+        <div id="menu" class="col-start-1 col-end-5 m-col-start-3 m-col-end-11 l-col-start-3 l-col-end-11 xl-col-start-3 xl-col-end-11 menu-box box-center">
             <h2>Character Menu</h2>
             <p>Search for your favorite Star Wars character and find out more about them!</p>
                 <select class="col-span-2" type="text" name="search" id="search">
@@ -53,26 +53,22 @@
             <br>
             <img class="miniicon" src="images/miniicon.png" alt="icon">
             
-            <section class="grid-con">
-                <section class="m-col-start-2 m-col-end-6 box-center" id="characters">
+            <section class="box-center">
+                <section class="box-center" id="characters">
                     <h2 class="hidden">Characters</h2>
                 </section>
         
-                <!-- <section class="m-col-start-9 m-col-end-11 l-col-start-9 l-col-end-11 xl-col-start-9 xl-col-end-11" id="films">
-                    <h2>Movies</h2>
-                </section> -->
+              
                 <section class="col-start-2 col-end-4  m-col-end-12 l-col-span-full xl-col-start-7 xl-col-end-12" id="film-con">
                 </section>
-                
 
         
-                <template id="film-template">
-                    <div>
-                        
-                    <img class="filmImage box-center ">
-                    <h3 class="filmTitle"></h3>
+                <template class="grid-con" id="film-template">
+                    <div class="col-start-1 col-end-5 m-col-start-3 m-col-end-11 l-col-start-3 l-col-end-11 xl-col-start-3 xl-col-end-11 box-center">
+                    <img class="filmImage box-center">
+                    <h3 class="filmTitle box-center"></h3>
                     <h4 class="film-episode"></h4>
-                    <p class="film-description"></p>
+                    <p class="film-description col-start-2 col-end-4  m-col-start-8 m-col-end-9 l-col-start-8 l-col-end-9  xl-col-start-9 xl-col-end-10 box-left"></p>
                     </div>
                   </template>
             </section>
