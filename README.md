@@ -1,6 +1,7 @@
 # Neira_Sandra_Neizer_Jemima_AJAX_REDUX
  Hi, this is our Star Wars API.
- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstarwars.fandom.com%2Fwiki%2FStar_Wars&psig=AOvVaw0wn65aVM6d51NJwo4xMg1k&ust=1706810791739000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPCxr-mbiIQDFQAAAAAdAAAAABAK" width="128"/>
+ ![image](https://github.com/Sssanp/Neira_Sandra_Neizer_Jemima_AJAX_REDUX/assets/121986335/e214559b-305b-4d68-ab97-592650008403)
+
 ## Installation
 No installation is required. Download the files to your desktop.
 ## Usage
