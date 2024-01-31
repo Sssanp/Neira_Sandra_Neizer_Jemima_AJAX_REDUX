@@ -63,30 +63,28 @@
 
     //1st AJAX call
     function getPeople() {
-
-
-        fetch(`${baseURL}people`)
+        
+            fetch(`${baseURL}people`)
 
             .then(response => response.json())
 
             .then(function (response) {
                 const people = response.results;
                 const ul = document.createElement('ul');
-                //people.innerHTML = spinner;
-                //for add spinner
-
+                
                 people.forEach(character => {
+                    
                     const select = document.querySelector('#search');
                     const option = document.createElement('option');
                     option.value = character['name'];
                     option.innerHTML = character['name'];
                     select.appendChild(option);
 
-
+                    
                     const film = (character['films']);
 
 
-                    if (film.length > 4) {
+                    if (film.length > 3) {
                         option.dataset.film = film[3]
 
                     } else {
