@@ -13,7 +13,7 @@ Open index.html in your browser choice.
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 ## History
->Using the Star wars API we create a menu that display characters and movies 
+>Using the Star Wars API we create a page with a cool design that has a dropdown menu that displays characters and movies.
 ## Credits
 Sandra Paola Neira (San) Jemima Neizer (Jay)
 ## License
